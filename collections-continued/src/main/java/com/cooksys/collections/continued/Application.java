@@ -21,9 +21,16 @@ public class Application {
 
 		System.out.println(countLetterOccurrences("supercalifragilisticexpialidocious"));
 		System.out.println(countLetterOccurrences("Hello World12345;!@"));
+		
+		Adult adult0 = new Adult("RootParent", 1000, null);
 
-		Adult adult1 = new Adult("Will", 30);
-		Adult adult2 = new Adult("Peter", 30);
+		Adult adult1 = new Adult("Adult1", 50, adult0);
+		Adult adult2 = new Adult("Adult2", 30, adult1);
+		
+		Child child1 = new Child("Child1", 5, adult2);
+		
+		System.out.println(child1.generateAncestorsList());
+		System.out.println(child1.getParent());
 
 		Set<Person> guests = new HashSet<>();
 		guests.add(adult1);
@@ -36,6 +43,15 @@ public class Application {
 		System.out.println(hotel1.roomsStillAvailable());
 
 		System.out.println(hotel1.allCheckedInGuests());
+		
+		Map<Integer, Set<Person>> mainHotelRooms = hotel1.getHotelRooms();
+		
+		mainHotelRooms.get(100).add(child1);
+		
+		System.out.println("Main Hotel Rooms: ");
+		System.out.println(mainHotelRooms);
+		System.out.println("Hotel1.getHotelRooms: ");
+		System.out.println(hotel1.getHotelRooms());
 
 	}
 

@@ -34,4 +34,14 @@ public class Hotel {
 		return result;
 	}
 
+	public Map<Integer, Set<Person>> getHotelRooms() {
+		Map<Integer, Set<Person>> result = new HashMap<>();
+		for (Integer roomNumber : hotelRooms.keySet()) {
+			result.put(roomNumber, new HashSet<>(hotelRooms.get(roomNumber)));
+		}
+		return result;
+	}
+	
+	
+
 }

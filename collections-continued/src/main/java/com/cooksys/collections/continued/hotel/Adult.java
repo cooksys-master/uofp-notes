@@ -1,14 +1,18 @@
 package com.cooksys.collections.continued.hotel;
 
+import java.util.List;
+
 public class Adult implements Person {
 
 	private String name;
 	private int age;
+	private Adult parent;
 
-	public Adult(String name, int age) {
+	public Adult(String name, int age, Adult parent) {
 		super();
 		this.name = name;
 		this.age = age;
+		this.parent = parent;
 	}
 
 	public String getName() {
@@ -30,6 +34,17 @@ public class Adult implements Person {
 	@Override
 	public String toString() {
 		return "Adult [name=" + name + ", age=" + age + "]";
+	}
+
+	@Override
+	public Adult getParent() {
+		return parent;
+	}
+
+	@Override
+	public List<Adult> generateAncestorsList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
