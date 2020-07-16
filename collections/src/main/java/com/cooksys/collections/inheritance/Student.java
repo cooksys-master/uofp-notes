@@ -2,10 +2,12 @@ package com.cooksys.collections.inheritance;
 
 public class Student implements Person {
 
+	private String socialSecurityNumber;
 	private String name;
 	private String team;
 
-	public Student(String name, String team) {
+	public Student(String socialSecurityNumber, String name, String team) {
+		this.socialSecurityNumber = socialSecurityNumber;
 		this.name = name;
 		this.team = team;
 	}
@@ -43,8 +45,32 @@ public class Student implements Person {
 
 	@Override
 	public String toString() {
-		return "Student [name=" + name + ", team=" + team + "]";
+		return "Student [socialSecurityNumber=" + socialSecurityNumber + ", name=" + name + ", team=" + team + "]";
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((socialSecurityNumber == null) ? 0 : socialSecurityNumber.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (socialSecurityNumber == null) {
+			if (other.socialSecurityNumber != null)
+				return false;
+		} else if (!socialSecurityNumber.equals(other.socialSecurityNumber))
+			return false;
+		return true;
+	}
 	
 }

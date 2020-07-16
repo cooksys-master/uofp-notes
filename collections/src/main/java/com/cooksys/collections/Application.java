@@ -24,7 +24,7 @@ public class Application {
 //		System.out.println(b1.getX());
 		
 		// Type inference
-		Box<Student> studentBox = new Box<>(new Student("Will", "charlie"));
+		Box<Student> studentBox = new Box<>(new Student("1", "Will", "charlie"));
 		
 		println(studentBox.getX());
 		
@@ -38,17 +38,32 @@ public class Application {
 		
 		List<Student> integerList = new ArrayList<>();
 		
-		integerList.add(new Student("Will", "charlie"));
-		integerList.add(new Student("Peter", "charlie"));
+		integerList.add(new Student("1", "Will", "charlie"));
+		integerList.add(new Student("2", "Peter", "charlie"));
 		
 		Set<Student> exampleSet = new HashSet<>();
 		
-		Student student1 = new Student("Will", "charlie");
+		Student student1 = new Student("1", "Will", "charlie");
+		Student student2 = new Student("2", "Peter", "charlie");
+		Student student3 = new Student("1", "Will", "charlie");
 		
 		exampleSet.add(student1);
-		exampleSet.add(student1);
+		exampleSet.add(student2);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
+		exampleSet.add(student3);
 		
 		System.out.println(exampleSet.size());
+		System.out.println(exampleSet);
 		
 		Map<Integer, Student> studentMap = new HashMap<>();
 		
