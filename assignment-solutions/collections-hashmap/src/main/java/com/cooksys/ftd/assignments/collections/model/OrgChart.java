@@ -44,7 +44,7 @@ public class OrgChart {
     	// otherwise return false
     	
     	// CONDITIONS
-    	// If the employee is already added, don't add, return false
+    	// If the employee is null or already added, don't add, return false
     	// An employee to be added should have their chain of command represented in the hierarchy
     	// If an employee is a worker and does not have a manager, do not add and return false
     	
@@ -138,7 +138,11 @@ public class OrgChart {
      *         been added to the {@code OrgChart}
      */
     public Set<Employee> getAllEmployees() {
-        throw new MissingImplementationException();
+        Set<Employee> result = new HashSet<>(this.hierarchy.keySet());
+        for (Set<Employee> subordinates : this.hierarchy.values()) {
+        	result.addAll(subordinates);
+        }
+        return result;
     }
 
     /**
@@ -152,7 +156,13 @@ public class OrgChart {
      *         have been added to the {@code OrgChart}
      */
     public Set<Manager> getAllManagers() {
-        throw new MissingImplementationException();
+//    	Set<Manager> result = new HashSet<>();
+////    	for(Manager m : this.hierarchy.keySet()) {
+////    		result.add(m);
+////    	}
+//    	result.addAll(this.hierarchy.keySet());
+//        return result;
+    	return new HashSet<>(this.hierarchy.keySet());
     }
 
     /**
@@ -173,7 +183,11 @@ public class OrgChart {
      *         or if there are no subordinates for the given {@code Manager}
      */
     public Set<Employee> getDirectSubordinates(Manager manager) {
-        throw new MissingImplementationException();
+        Set<Employee> result = new HashSet<>();
+        if (this.hasEmployee(manager)) {
+        	result.addAll(this.hierarchy.get(manager));
+        }
+        return result;
     }
 
     /**
@@ -193,7 +207,11 @@ public class OrgChart {
      *         associated {@code Manager}, or an empty map if the {@code OrgChart} is empty.
      */
     public Map<Manager, Set<Employee>> getFullHierarchy() {
-        throw new MissingImplementationException();
+        Map<Manager, Set<Employee>> result = new HashMap<>();
+        for (Manager current : this.hierarchy.keySet()) {
+        	result.put(current, new HashSet<>(this.hierarchy.get(current)));
+        }
+        return result;
     }
 
 }
