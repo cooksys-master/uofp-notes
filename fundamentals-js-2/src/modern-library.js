@@ -1,11 +1,11 @@
-console.log('in modern library')
+console.log('in modern library');
 
-export const x = 10
+export const x = 10;
 
 export function double (n) {
-  return n * 2
+  return n * 2;
 }
 
 export class C {}
 
-export default double
+export default double;

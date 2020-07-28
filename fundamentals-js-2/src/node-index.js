@@ -15,4 +15,4 @@
 // console.log(l2.count)
 
 // runs for its side effect
-require('./node-library')
+require('./node-library');

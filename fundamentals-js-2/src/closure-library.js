@@ -1,15 +1,15 @@
-let counter = 0
+let counter = 0;
 
 export function inc () {
-  counter++
+  counter++;
 }
 
 export function dec () {
-  counter--
+  counter--;
 }
 
 export function getCounter () {
-  return counter
+  return counter;
 }
 
-export default counter
+export default counter;

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src/ -d build/",
-    "test": "standard",
+    "format": "semistandard --fix",
     "start": "babel-node src/index.js",
     "repl": "babel-node"
   },
@@ -35,7 +35,7 @@
       ]
     ]
   },
-  "standard": {
+  "semistandard": {
     "parser": "babel-eslint"
   }
 }
