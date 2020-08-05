@@ -1,0 +1,30 @@
+# no context for what x is = irreducible expression
+x + 2 --> x + 2
+
+# with context, perform substitution
+given: const x = 10;
+x + 2 --> 
+x + 2 [10/x] -->
+10 + 2 -->
+12
+
+# general form:
+# e1 [e2/x] means "replace each instance of x in expression e1 with expression e2
+# in media res example:
+x * x + y + z [10/x, (1 + 2)/z] -->
+10 * 10 + y + (1 + 2) -->
+100 + y + 3 [undefined/y] -->
+100 + undefined + 3 -->
+NaN + 3 -->
+NaN
+
+# multiple variables
+given: const x = 1;
+       const y = x + 2;
+x + y -->
+x + y [(x + 2)/y] -->
+x + (x + 2) -->
+x + x + 2 [1/x] -->
+1 + 1 + 2 -->
+4
+

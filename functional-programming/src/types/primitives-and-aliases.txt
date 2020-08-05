@@ -1,0 +1,12 @@
+10 : number
+'Hello' : string
+true : boolean
+new Promise(...) : Promise
+
+// type MyBool = boolean
+// isDoubled : MyBool === isDoubled : boolean
+const isDoubled = true
+
+(10 + 2) : number
+'Hello' + 'world' : string
+

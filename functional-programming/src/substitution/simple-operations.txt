@@ -1,0 +1,12 @@
+# <- this means comment
+# Operators
+1 + 2 --> 3
+11 / 9 --> 11/9
+# built-in standard library methods
+'Hello'.charAt(0) --> 'H'
+[1, 2, 3].map(x => x * 2) --> [2, 4, 6]
+# data access syntax
+({ a: 1 }).a --> 1
+({}).a --> undefined
+[1, 2, 3][0] --> 1
+[1, 2, 3][3] --> undefined
