@@ -1,0 +1,22 @@
+# objects
+
+{} : {}
+{ a: 1 } : { a: number }
+{ a: 1, b: 'Hello' } : { a: number, b: string }
+// type aNumber = { a: number }
+// type aNumberBString = { a: number, b: string }
+// aNumberBString <: aNumber (subtype)
+// aNumber >: aNumberBString
+
+# arrays
+
+[1, 2, 3] : [number]
+1 : number
+['Hello', 'world!'] : [string]
+
+# tuples
+// type Coordinate = (number, number)
+[10, 200] : Coordinate
+
+// type LabeledValue = (string, number)
+['label', 10] : LabeledValue

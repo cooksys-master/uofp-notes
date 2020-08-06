@@ -1,0 +1,32 @@
+{
+  "name": "functional-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "semistandard --fix",
+    "start": "babel-node src/index.js",
+    "repl": "babel-node"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.0",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "babel-eslint": "^10.1.0",
+    "semistandard": "^14.2.3"
+  },
+  "babel": {
+    "presets": [["@babel/preset-env", {
+      "targets": {
+        "node": "current"
+      }
+    }]]
+  },
+  "semistandard": {
+    "parser": "babel-eslint"
+  }
+}

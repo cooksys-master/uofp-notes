@@ -1,0 +1,37 @@
+given: const double = x => x * 2;
+double(6) -->
+double(6) [(x => x * 2)/double] -->
+(x => x * 2)(6) -->
+x * 2 [6/x] -->
+6 * 2 -->
+12
+--------
+given any n
+double(n) <=> n * 2 # can we prove this?
+double(n) [(x => x * 2)/double] -->
+(x => x * 2)(n) -->
+x * 2 [n/x] -->
+n * 2 <=> n * 2 # we can now use double(n) = n * 2 as a substitution
+--------
+double(double(20)) --> # apply law double(n) = n * 2
+double(20 * 2) --> # apply law double(n) = n * 2
+(20 * 2) * 2 -->
+40 * 2 -->
+80
+--------
+double(double(n)) <=> n * 4
+# proof left as an exercise to the reader
+
+# also works (sometimes) with function-keyword functions and return statements
+given: function double (x) {
+  const result = x * 2;
+  return result;
+}
+double(2) -->
+(function (x) { const result = x * 2; return result; })(2) -->
+{ const result = x * 2; return result; } [2/x] -->
+{ const result = 2 * 2; return result; } -->
+result [(2 * 2)/result] -->
+2 * 2 -->
+4
+

@@ -1,0 +1,19 @@
+// double : number -> number
+const double = x => x * 2
+
+// add : (a: number, b: number) -> number
+const add = (a, b) => a + b
+
+// type Coordinate = (number, number)
+// magnitude : (coord: (number, number)) -> number
+const magnitude =  (coord) => ???
+
+// double(10) :
+// (number -> number)(number) :
+// number
+double(10) 
+
+// length : string -> number
+const length = str => str.length
+// length('Hello') : (string -> number)(string) : number
+// length()

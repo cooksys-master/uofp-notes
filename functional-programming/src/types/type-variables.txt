@@ -1,0 +1,13 @@
+// length : [a] -> number
+const length = array => array.length
+
+// filter : (array: [a], predicate: a -> boolean) -> [a]
+const filter = (array, predicate) => {
+  let result = [];
+  for (const elem of array) {
+    if (predicate(elem)) {
+      result.push(elem);
+    }
+  }
+  return result;
+}

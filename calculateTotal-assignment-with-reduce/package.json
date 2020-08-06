@@ -1,0 +1,21 @@
+{
+  "name": "js-assignment-primer",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "mocha --require @babel/register",
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "author": "Will Marttala",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "jsverify": "^0.8.4",
+    "lodash": "^4.17.15",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.2"
+  }
+}
