@@ -7,9 +7,29 @@ const count = 0;
 
 const counter = document.querySelector('.counter');
 
+const section = document.querySelector('.section');
+const div = document.querySelector('.div');
 const button = document.querySelector('button');
 
-button.addEventListener(
+section.addEventListener('click', () => alert('Bubble: ' + section.tagName));
+
+div.addEventListener('click', () => {
+  alert('Bubble: ' + div.tagName);
+});
+
+section.addEventListener('click', () => alert('CAPTURE: ' + section.tagName), {
+  capture: true
+});
+
+div.addEventListener(
   'click',
-  () => (counter.innerHTML = Number.parseInt(counter.innerHTML) + 1)
+  () => {
+    alert('CAPTURE: ' + div.tagName);
+  },
+  true
 );
+
+button.addEventListener('click', () => {
+  alert(button.tagName);
+  counter.innerHTML = Number.parseInt(counter.innerHTML) + 1;
+});
