@@ -1,0 +1,37 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+.button {
+  width: 50px;
+  height: 35px;
+  font-size: 1.5em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border-radius: 5px;
+}
+
+.increment-button {
+  background: palegreen;
+}
+
+.decrement-button {
+  background: palevioletred;
+}
+
+h3 {
+  font-size: 2em;
+  color: #555;
+}
+
+/* ol {
+  list-style: disc;
+}
+
+ul {
+  list-style: decimal;
+} */
