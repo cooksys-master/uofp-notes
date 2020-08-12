@@ -7,3 +7,13 @@
   align-items: center;
   flex-direction: column;
 }
+
+.Todo {
+  background: white;
+  border: 1px solid #444;
+  padding: 5px;
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
