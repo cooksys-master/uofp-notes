@@ -1,4 +1,5 @@
 import React from 'react';
+import Todo from './Todo';
 import './App.css';
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
       );
   };
 
-  const handeDelete = id => {
+  const handleDelete = id => {
     fetch(`http://localhost:8080/todos/${id}`, {
       method: 'DELETE'
     })
@@ -52,27 +53,23 @@ function App() {
   return (
     <div className="TodoApp">
       <h1 className="Header">todos</h1>
-      <input
-        type="text"
-        value={inputText}
-        onChange={event => {
-          setInputText(event.target.value);
-        }}
-        onKeyPress={handleCreateTodo}
-      />
       <div className="TodoList">
+        <input
+          className="NewTodo"
+          type="text"
+          value={inputText}
+          onChange={event => {
+            setInputText(event.target.value);
+          }}
+          onKeyPress={handleCreateTodo}
+        />
         {todos.map(todo =>
-          <div className="Todo" key={todo.id}>
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => handleToggleTodo(todo)}
-            />
-            <p>
-              {todo.message}
-            </p>
-            <button onClick={() => handeDelete(todo.id)}>X</button>
-          </div>
+          <Todo
+            key={todo.id}
+            todo={todo}
+            handleToggleTodo={handleToggleTodo}
+            handleDelete={handleDelete}
+          />
         )}
       </div>
     </div>
