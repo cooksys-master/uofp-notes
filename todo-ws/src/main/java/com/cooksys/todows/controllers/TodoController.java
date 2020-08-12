@@ -3,20 +3,14 @@ package com.cooksys.todows.controllers;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.cooksys.todows.dtos.TodoDto;
 import com.cooksys.todows.mappers.TodoMapper;
 import com.cooksys.todows.services.TodoService;
 
 @RestController
+@CrossOrigin(origins = "*")
 public class TodoController {
 
 	private TodoService todoService;
@@ -39,7 +33,7 @@ public class TodoController {
 				.collect(Collectors.toList());
 	}
 
-//	create a new todo 
+//	create a new todo
 //	POST /todos/ :: string -> Todo
 	@PostMapping("/todos/")
 	public TodoDto createNewTodo(@RequestParam String message) {
