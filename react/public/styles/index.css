@@ -1,0 +1,22 @@
+article .blue {
+  color: blue;
+}
+article > h3 {
+  color: orange;
+}
+h3 {
+  background: red;
+  color: white;
+}
+.blue {
+  color: orange;
+}
+.article-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+p {
+  text-align: center;
+}
