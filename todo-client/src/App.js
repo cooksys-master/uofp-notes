@@ -24,7 +24,6 @@ function App() {
 
   const handleToggleTodo = todo => {
     const todoUpdate = { message: todo.message, completed: !todo.completed };
-    console.log(todoUpdate);
     fetch(`http://localhost:8080/todos/${todo.id}`, {
       method: 'PUT',
       headers: {
@@ -34,10 +33,9 @@ function App() {
     })
       .then(response => response.json())
       .then(updatedTodo =>
-        setTodos([
-          ...todos.filter(todo => todo.id !== updatedTodo.id),
-          updatedTodo
-        ])
+        setTodos(
+          todos.map(todo => (todo.id === updatedTodo.id ? updatedTodo : todo))
+        )
       );
   };
 
@@ -66,7 +64,7 @@ function App() {
         {todos.map(todo =>
           <div className="Todo" key={todo.id}>
             <input
-              type="radio"
+              type="checkbox"
               checked={todo.completed}
               onChange={() => handleToggleTodo(todo)}
             />
